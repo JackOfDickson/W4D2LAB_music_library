@@ -3,8 +3,8 @@ import pdb
 from re import A
 from models.album import Album
 from models.artist import Artist
-import respositories.album_respository as album_respository
-import respositories.artist_repository as artist_repository
+import repositories.album_repository as album_repository
+import repositories.artist_repository as artist_repository
 
 
 
@@ -18,9 +18,9 @@ for artist in artists:
     print(artist.__dict__)
 
 album_1 = Album('good jams', 'human music', artist_1)
-album_respository.save(album_1)
+album_repository.save(album_1)
 
-albums = album_respository.select_all()
+albums = album_repository.select_all()
 
 for album in albums:
     print(album.__dict__)
