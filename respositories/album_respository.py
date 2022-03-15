@@ -10,3 +10,13 @@ def save(album):
     id = results[0]['id']
     album.id = id
     return album
+
+def select_all():
+    albums = []
+    sql = "SELECT * FROM albums"
+    result = run_sql(sql)
+    
+    for row in result:
+        album = Album(row['title'], row['genre'], row['artist_id'], row['id'])
+        albums.append(album)
+    return albums
