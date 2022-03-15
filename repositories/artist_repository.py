@@ -15,6 +15,10 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
     
+def delete_all():
+    sql = "DELETE FROM artists"
+    run_sql(sql)
+    
 def select_all():
     artists = []
     sql = "SELECT * FROM artists"
@@ -33,3 +37,4 @@ def select(id):
     if result is not None:
         artist =Artist(result['name'], result['artist_id'])
     return artist
+
